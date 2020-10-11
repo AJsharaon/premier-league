@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Penalty Shoot out!</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-list">
+        <li class="logo"><a href="index.html"><img src="./images/premier-league.png" alt="Premier League"></a></li>
+        <li>
+          <ul  class="nav-title">
+            <li class="nav-choice"><a href="index.html#teams">TEAMS</a></li>
+            <li class="nav-choice"><a href="index.html#fixtures">FIXTURES</a></li>
+            <li class="nav-choice"><a href="gameplay.html">GAMEPLAY</a></li>
+            <li class="nav-choice"><a href="pointstable.html">POINTS TABLE</a></li>
+        </ul>
+      </li>
+      </ul>
+    </nav>
+
+
+    <header class="schedule">
+      <div class="non-final">
+      <div class="container">
+        <h2>Qualifier</h2>
+        <div class="row">
+            <div class="col">
+                <img
+                    src="./images/arsenal.png"
+                    alt="Arsenal"
+                    class="profile-icon"
+                    height="150px"
+                    width="150px"
+                />
+                <span class="name" id="team-1-name"></span>
+                <div class="row round-runs" id="team-1-round-runs">
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row score">
+                    <span id="team-1-score"></span>
+                    <span>-</span>
+                    <span id="team-2-score"></span>
+                </div>
+            </div>
+            <div class="col">
+                <img
+                    src="./images/man-city.png"
+                    alt="Manchester City"
+                    class="profile-icon"
+                    height="150px"
+                    width="150px"
+                />
+                <span class="name" id="team-2-name"></span>
+                <div class="row round-runs" id="team-2-round-runs">
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                    <span class="col">-</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="shoot-button"
+                id="shoot-button-1"
+                onclick="handleShootButtonClick()"
+            ></button>
+        </div>
+        <div class="row" id="result-1" hidden></div>
+    </div>
+
+    <div class="container">
+      <h2>Semi Final</h2>
+      <div class="row">
+          <div class="col">
+              <img
+                  src="./images/liverpool.png"
+                  alt="Liverpool"
+                  class="profile-icon"
+                  height="150px"
+                  width="150px"
+              />
+              <span class="name" id="team-3-name"></span>
+              <div class="row round-runs" id="team-3-round-runs">
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+              </div>
+          </div>
+          <div class="col">
+              <div class="row score">
+                  <span id="team-3-score"></span>
+                  <span>-</span>
+                  <span id="team-4-score"></span>
+              </div>
+          </div>
+          <div class="col">
+              <img
+                  src="./images/watford.png"
+                  alt="Watford"
+                  class="profile-icon"
+                  height="150px"
+                  width="150px"
+              />
+              <span class="name" id="team-4-name"></span>
+              <div class="row round-runs" id="team-4-round-runs">
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+                  <span class="col">-</span>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <button class="shoot-button"
+              id="shoot-button-2"
+              onclick="handleShootButtonClick()"
+          ></button>
+      </div>
+      <div class="row" id="result-2" hidden></div>
+  </div>
+  </div>
+
+  <div class="final">
+  <div class="container">
+    <h2>Final</h2>
+    <div class="row">
+        <div class="col">
+            <img
+                src="./images/man-united.png"
+                alt="Manchester United"
+                class="profile-icon"
+                height="150px"
+                width="150px"
+            />
+            <span class="name" id="team-5-name"></span>
+            <div class="row round-runs" id="team-5-round-runs">
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row score">
+                <span id="team-5-score"></span>
+                <span>-</span>
+                <span id="team-6-score"></span>
+            </div>
+        </div>
+        <div class="col">
+            <img src="./images/liverpool.png"
+                alt="Liverpool"
+                class="profile-icon"
+                height="150px"
+                width="150px"
+            />
+            <span class="name" id="team-6-name"></span>
+            <div class="row round-runs" id="team-6-round-runs">
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+                <span class="col">-</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <button class="shoot-button"
+            id="shoot-button-3"
+            onclick="handleShootButtonClick()"
+        ></button>
+    </div>
+    <div class="row" id="result-3" hidden></div>
+</div>
+</div>
+<script src="./gameplay.js"></script>
+  </body>
+</html>
